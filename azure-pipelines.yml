@@ -21,3 +21,18 @@ steps:
   inputs:
     connectedServiceName: 'DevOps Connection'
     Phase: 'STARTED'
+- task: ServiceNow-DevOps-Agent-Artifact-Registration@1
+  inputs:
+    connectedServiceName: 'DevOps Connection'
+    artifactsPayload: |
+      {
+         "artifacts": [
+            {
+               "name": "AdonisRapDev.Azure-DevOps",
+               "version": "1.$(Build.BuildId)",
+               "semanticVersion": "1.$(Build.BuildId).0",
+               "BuildNumber": "$(Build.BuildNumber)",
+               "repositoryName": "_AdonisRapDev.Azure-DevOps"
+            }
+         ]
+      }
