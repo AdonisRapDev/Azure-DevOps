@@ -33,11 +33,4 @@ steps:
             }
          ]
       }
-      - task: ServiceNow-DevOps-Agent-Job-Notification@1
-        inputs:
-          connectedServiceName: 'DevOps Connection'
-          Phase: 'STARTED'
-          - task: ServiceNow-DevOps-Agent-Job-Notification@1
-            inputs:
-              connectedServiceName: 'DevOps Connection'
-              Phase: 'COMPLETED'
+      
