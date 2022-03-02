@@ -16,7 +16,7 @@ stages:
           {
              "artifacts": [
                 {
-                   "name": "_Pipeline 1",
+                   "name": "_Pipeline 2",
                    "version": "1.$(Build.BuildId)",
                    "semanticVersion": "1.$(Build.BuildId).0",
                    "repositoryName": "Pipeline 2"
