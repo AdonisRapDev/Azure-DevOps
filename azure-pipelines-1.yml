@@ -9,20 +9,20 @@ stages:
   - job: Build
     steps:
     - bash: echo “Build”
-- task: ServiceNow-DevOps-Agent-Artifact-Registration@1
-  inputs:
-    connectedServiceName: 'dev105110-Adonis Test project-ServiceNow DevOps Service Connection'
-    artifactsPayload: |
-      {
-         "artifacts": [
-            {
-               "name": "<artifact name>",
-               "version": "1.$(Build.BuildId)",
-               "semanticVersion": "1.$(Build.BuildId).0",
-               "repositoryName": "<artifact repository name>"
-            }
-         ]
-      }
+    - task: ServiceNow-DevOps-Agent-Artifact-Registration@1
+      inputs:
+        connectedServiceName: 'dev105110-Adonis Test project-ServiceNow DevOps Service Connection'
+        artifactsPayload: |
+          {
+            "artifacts": [
+                {
+                  "name": "<artifact name>",
+                  "version": "1.$(Build.BuildId)",
+                  "semanticVersion": "1.$(Build.BuildId).0",
+                  "repositoryName": "<artifact repository name>"
+                }
+            ]
+          }
 
 - stage: Test
   jobs:
