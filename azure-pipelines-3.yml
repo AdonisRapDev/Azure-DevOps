@@ -1,0 +1,17 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+stages:
+- stage: Test
+  jobs:
+  - job: Checkmarx_Scan
+    steps:
+    - bash: echo “Checkmarx scan”
+    
+- stage: Test
+  jobs:
+  - job: Production_Deploy
+    steps:
+    - bash: echo “Production Deploy”
