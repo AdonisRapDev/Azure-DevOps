@@ -10,7 +10,7 @@ stages:
     steps:
     - bash: echo “Checkmarx scan”
     
-- stage: Test
+- stage: Deploy
   jobs:
   - job: Production_Deploy
     steps:
