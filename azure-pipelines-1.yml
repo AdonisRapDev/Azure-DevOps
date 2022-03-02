@@ -29,6 +29,10 @@ stages:
   - job: Unit_Tests
     steps:
     - script: echo “Unit Tests”
+    - task: PublishTestResults@2
+      inputs:
+        testResultsFormat: 'JUnit'
+        testResultsFiles: '**/TEST-*.xml'
     - task: CmdLine@2
       inputs:
         script: |
