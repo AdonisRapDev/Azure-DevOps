@@ -8,6 +8,7 @@ stages:
   jobs:
   - job: Build
     steps:
+    - bash: echo “Build”
 - task: ServiceNow-DevOps-Agent-Artifact-Registration@1
   inputs:
     connectedServiceName: 'dev105110-Adonis Test project-ServiceNow DevOps Service Connection'
@@ -15,34 +16,13 @@ stages:
       {
          "artifacts": [
             {
-               "name": "_Pipeline 1",
+               "name": "<artifact name>",
                "version": "1.$(Build.BuildId)",
                "semanticVersion": "1.$(Build.BuildId).0",
-               "repositoryName": "Pipeline 1"
-            },
-            {
-               "name": "_Pipeline 1",
-               "version": "1.$(Build.BuildId)",
-               "semanticVersion": "1.$(Build.BuildId).0",
-               "repositoryName": "Pipeline 1"
-            },
-      {
-      "name":"Test-summary-1.0.0",
-      "duration":0.0,
-      "passedTests":10,
-      "failedTests":1,
-      "skippedTests":0,
-      "blockedTests":0,
-      "totalTests":11,
-      "startTime":"'2022-03-02T06:48:41Z'",
-      "finishTime":"'2022-03-02T06:48:41Z'",
-      "artifacts":[{"name":"CorpSite-artifact","version":"1.0.0"}]
-      }
-      
+               "repositoryName": "<artifact repository name>"
+            }
          ]
       }
-    - bash: echo “Build”
-
 
 - stage: Test
   jobs:
