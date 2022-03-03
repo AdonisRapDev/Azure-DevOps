@@ -38,6 +38,12 @@ stages:
           echo $testPayload
           curl -X POST -H 'Content-Type: application/json' -u 'devops.integration.user:nE9njUJZ&!98'  -d $testPayload 'https://dev105110.service-now.com/api/sn_devops/v1/devops/tool/%7Bcode%20%7C%20plan%20%7C%20artifact%20%7C%20orchestration%20%7C%20test%20%7C%20softwarequality%20%7D?toolId=db976dc997020110b33af5b3f153af54'
 
+    - task: InvokeRESTAPI@1
+      inputs:
+        connectionType: 'connectedServiceName'
+        method: 'POST'
+        waitForCompletion: 'false'
+
   - job:  Checkmarx_Scan
     steps:
     - bash: echo “Checkmarx Scan”
