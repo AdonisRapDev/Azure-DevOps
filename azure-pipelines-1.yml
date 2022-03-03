@@ -67,28 +67,5 @@ stages:
     steps:
     - bash: echo “Production Deploy”
     
-- stage: Test2
-  jobs:
-  - job: Test2
-    steps:
-    - script: echo “Test2”
-    - task: InvokeRESTAPI@1
-      inputs:
-        connectionType: 'connectedServiceName'
-        serviceConnection: 'dev105110-Adonis Test project-Generic Connection'
-        method: 'POST'
-        body: |
-          {
-          "name":"Test-summary-1.0.0",
-          "duration":0.0,
-          "passedTests":10,
-          "failedTests":1,
-          "skippedTests":0,
-          "blockedTests":0,
-          "totalTests":11,
-          "startTime":"'2022-03-02T06:48:41Z'",
-          "finishTime":"'2022-03-02T06:48:41Z'",
-          "artifacts":[{"name":"CorpSite-artifact","version":"1.0.0"}]
-          }
-        waitForCompletion: 'false'
+
    
