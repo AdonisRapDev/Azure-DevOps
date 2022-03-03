@@ -33,7 +33,7 @@ stages:
     - task: CmdLine@2
       inputs:
         script: |
-          curl -X POST "https://dev105110.service-now.com//api/sn_devops/devops/package/registration?toolId=db976dc997020110b33af5b3f153af54"\ -H "accept: application/json"\ -H "Content-Type: application/json"\ -u "devops.integration.user":"nE9njUJZ&!98"\ -d "{\ "name": "sentimentpackage",\ "artifacts": [\ {\ "name": "sa-web.jar",\ "repositoryName": "services-1031",\ "version": "3.1"\ },\ {\ "name": "sa-frontend.jar",\ "repositoryName": "services-1031",\ "version": "9.2"\ }\ ],\ "pipelineName": "spring-boot-app",\ "taskExecutionNumber": "160",\ "stageName": "Build",\ "branchName": "primary"\ }"
+          curl -X POST "https://dev105110.service-now.com/api/sn_devops/devops/package/registration?toolId=db976dc997020110b33af5b3f153af54"\ -H "accept: application/json"\ -H "Content-Type: application/json"\ -u "devops.integration.user":"nE9njUJZ&!98"\ -d "{\ "name": "sentimentpackage",\ "artifacts": [\ {\ "name": "sa-web.jar",\ "repositoryName": "services-1031",\ "version": "3.1"\ },\ {\ "name": "sa-frontend.jar",\ "repositoryName": "services-1031",\ "version": "9.2"\ }\ ],\ "pipelineName": "spring-boot-app",\ "taskExecutionNumber": "160",\ "stageName": "Build",\ "branchName": "primary"\ }"
   - job:  Checkmarx_Scan
     steps:
     - bash: echo “Checkmarx Scan”
