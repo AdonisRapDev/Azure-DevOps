@@ -71,7 +71,7 @@ stages:
   jobs:
   - job: Test2
     steps:
-    - bash: echo “Test2”
+    - script: echo “Test2”
     - task: InvokeRESTAPI@1
       inputs:
         connectionType: 'connectedServiceName'
