@@ -25,18 +25,17 @@ stages:
           }
 
 
-    - task: InvokeRESTAPI@1
-      inputs:
-        connectionType: 'connectedServiceName'
-        method: 'POST'
-        waitForCompletion: 'false'
-
-
 - stage: Test
   jobs:
   - job: Unit_Tests
     steps:
     - script: echo “Unit Tests”
+
+    - task: InvokeRESTAPI@1
+      inputs:
+        connectionType: 'connectedServiceName'
+        method: 'POST'
+        waitForCompletion: 'false'
 
     - task: CmdLine@2
       inputs:
