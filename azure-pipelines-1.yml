@@ -36,7 +36,7 @@ stages:
           NOW=$(date +"%Y-%m-%dT%T-0500")
           testPayload='{"name":"Test-summary-1.$(Build.BuildId).0","duration":0.0,"passedTests":10,"failedTests":1,"skippedTests":0,"blockedTests":0,"totalTests":11,"startTime":"'$NOW'","finishTime":"'$NOW'","artifacts":[{"name":"CorpSite-artifact","version":"1.$(Build.BuildId)"}]}'
           echo $testPayload
-          curl -X POST -H 'Content-Type: application/json' -u 'devops.integration.user:nE9njUJZ&!98'  -d $testPayload 'https://dev105110.service-now.com/api/sn_devops/v1/devops/tool/%7Bcode%20%7C%20plan%20%7C%20artifact%20%7C%20orchestration%20%7C%20test%20%7C%20softwarequality%20%7D?toolId=ada03cf897420110b33af5b3f153af52'
+          curl -X POST -H 'Content-Type: application/json' -u 'devops.integration.user:nE9njUJZ&!98'  -d $testPayload 'https://%3CDevOps%20integration%20user%20ID%3E:%3Cintegration%20user%20password%3E@dev105110.service-now.com/api/sn_devops/v1/devops/tool/%7Bcode%20%7C%20plan%20%7C%20artifact%20%7C%20orchestration%20%7C%20test%20%7C%20softwarequality%20%7D?toolId=db976dc997020110b33af5b3f153af54'
 
   - job:  Checkmarx_Scan
     steps:
