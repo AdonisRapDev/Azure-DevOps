@@ -37,7 +37,6 @@ stages:
           testPayload='{"name":"Test-summary-1.$(Build.BuildId).0","duration":0.0,"passedTests":10,"failedTests":1,"skippedTests":0,"blockedTests":0,"totalTests":11,"startTime":"'$NOW'","finishTime":"'$NOW'","artifacts":[{"name":"jon-devops.war","version":"1.$(Build.BuildId)"}]}'
           echo $testPayload
           curl -X POST -H 'Content-Type: application/json' -u 'devops.integration.user":"nE9njUJZ&!98'  -d $testPayload https://dev88076.service-now.com/api/sn_devops/v1/devops/tool/test?orchestrationToolId\=db976dc997020110b33af5b3f153af54\&toolId=db976dc997020110b33af5b3f153af54'
-'
   - job: 'Checkmarx_Scan'
     dependsOn: 'Unit_Tests'
     steps:
