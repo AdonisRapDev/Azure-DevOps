@@ -33,7 +33,7 @@ stages:
     - task: CmdLine@2
       inputs:
         script: |
-         curl "https://dev105110.service-now.com/api/sn_devops/devops/package/registration?toolId=db976dc997020110b33af5b3f153af54" \ --request GET \ --header "Accept:application/json" \ --user "devops.integration.user":"nE9njUJZ&!98"
+         curl "https://dev105110.service-now.com/api/sn_devops/devops/package/registration?toolId=db976dc997020110b33af5b3f153af54"
   - job: 'Checkmarx_Scan'
     dependsOn: 'Unit_Tests'
     steps:
