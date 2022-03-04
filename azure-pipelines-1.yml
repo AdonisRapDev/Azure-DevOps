@@ -16,7 +16,7 @@ stages:
           {
             "artifacts": [
                 {
-                  "name": "_Pipeline 1",
+                  "name": "adonis-devops.war",
                   "version": "1.$(Build.BuildId)",
                   "semanticVersion": "1.$(Build.BuildId).0",
                   "repositoryName": "Pipeline 1"
@@ -58,7 +58,7 @@ stages:
           {
               "artifacts": [
               {
-                  "name": "_Pipeline 1",
+                  "name": "adonis-devops.war",
                   "repositoryName": "Pipeline 1",
                   "version": "1.$(build.buildId)",
                   "currentBuildInfo": "true"
