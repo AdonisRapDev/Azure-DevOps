@@ -33,7 +33,11 @@ stages:
     - task: CmdLine@2
       inputs:
         script: |
-          curl -X POST "https://dev105110.service-now.com/api/sn_devops/devops/package/registration?toolId=db976dc997020110b33af5b3f153af54" -H "accept: application/json"\ -H "Content-Type: application/json"\ -u "devops.integration.user":"nE9njUJZ&!98"\ -d "{ "artifacts": [ { "name": "sp-boot-app", "version": "1.320", "semanticVersion": "1.320.0", "repositoryName": "sp-boot-app-repo" } ], "pipelineName": "spring-boot-app-gitea", "taskExecutionNumber": "320", "stageName": "Build" } }" - job:  Checkmarx_Scan steps: - bash: echo “Checkmarx Scan”
+          curl -X POST "https://dev105110.service-now.com/api/sn_devops/devops/package/registration?toolId=db976dc997020110b33af5b3f153af54" -H "accept: application/json"\ -H "Content-Type: application/json"\ -u "devops.integration.user":"nE9njUJZ&!98"\ -d "{ "artifacts": [ { "name": "sp-boot-app", "version": "1.320", "semanticVersion": "1.320.0", "repositoryName": "sp-boot-app-repo" } ], "pipelineName": "spring-boot-app-gitea", "taskExecutionNumber": "320", "stageName": "Build" } }" 
+  - job: 'Checkmarx_Scan'
+    dependsOn: 'Unit_Tests'
+    steps:
+    - script: echo Checkmarx Scan
 
 
 
