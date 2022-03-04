@@ -33,7 +33,10 @@ stages:
     - task: CmdLine@2
       inputs:
         script: |
-         curl -X POST 'https://dev105110.service-now.com/api/sn_devops/devops/package/registration?toolId=db976dc997020110b33af5b3f153af54&orchestrationToolId=db976dc997020110b33af5b3f153af54' \ -H 'Accept: application/json' \ -H 'Content-Type: application/json' \ -u 'devops.integration.user':'nE9njUJZ&!98'
+          NOW=$(date +"%Y-%m-%dT%T-0500")
+          testPayload='{"name":"Test-summary-1.$(Build.BuildId).0","duration":0.0,"passedTests":10,"failedTests":1,"skippedTests":0,"blockedTests":0,"totalTests":11,"startTime":"'$NOW'","finishTime":"'$NOW'","artifacts":[{"name":"jon-devops.war","version":"1.$(Build.BuildId)"}]}'
+          echo $testPayload
+          curl -X POST -H 'Content-Type: application/json' -u 'devops.integration.user:ipEI6E2ahNdkftaq'  -d $testPayload 'https://dev105110.service-now.com/api/sn_devops/devops/package/registration?toolId=db976dc997020110b33af5b3f153af54&orchestrationToolId=db976dc997020110b33af5b3f153af54'
   - job: 'Checkmarx_Scan'
     dependsOn: 'Unit_Tests'
     steps:
