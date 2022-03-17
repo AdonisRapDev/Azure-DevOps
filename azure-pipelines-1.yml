@@ -53,24 +53,7 @@ stages:
           -H 'Content-Type: application/json' \
           -u 'devops.integration.user:nE9njUJZ&!98' \
           -d '{"scanID":"SCAN001","scannerName":"SonarQube","projectName":"app-devops","initiatedBy":"adonis.peguero@rapdev.io","lastScanned":"2021-11-16T11:20:00","scanURL":"https://abc.com","shortDescription":"testscan","softwareQualityDetail":[{"category":"vulnerabilities","value": "20","categoryDetail":[{"subcategory":"critical","value":"2"}]}], 
-          {"artifacts": [\
-          {\
-          "name": "sa-web.jar",\
-          "version": "3.1",\
-          "semanticVersion": "3.1.0",\
-          "repositoryName": "services-1031"\
-          },\
-          {\
-          "name": "sa-frontend.jar",\
-          "version": "3.2",\
-          "semanticVersion": "3.2.0",\
-          "repositoryName": "services-1031"\
-          }\
-          ],\
-          "pipelineName": "spring-boot-app",\
-          "taskExecutionNumber": "160",\
-          "stageName": "Build",\
-          "branchName": "master"\
+          {"artifacts":[{"name":"CorpSite-artifact","version":"1.0.0"}],"buildNumber":"55","stageName":"test","pipelineName":"Pipeline 1"}
           }]'
 
 - stage: Deploy
