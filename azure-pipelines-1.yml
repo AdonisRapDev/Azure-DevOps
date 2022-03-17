@@ -48,7 +48,7 @@ stages:
         script: |
           NOW=$(date +"%Y-%m-%dT%T-0500")
           curl -X POST \
-          'https://instance.servicenow.com/api/sn_devops/devops/artifact/registration?toolId=3e27ef1597064110b33af5b3f153af14&orchestrationToolId=ada03cf897420110b33af5b3f153af52' \
+          'https://dev105110.service-now.com/api/sn_devops/devops/artifact/registration?toolId=3e27ef1597064110b33af5b3f153af14&orchestrationToolId=ada03cf897420110b33af5b3f153af52' \
           -H 'Accept: application/json' \
           -H 'Content-Type: application/json' \
           -u 'devops.integration.user:nE9njUJZ&!98' \
