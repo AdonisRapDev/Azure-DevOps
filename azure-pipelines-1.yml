@@ -40,7 +40,7 @@ stages:
 
 - stage: SonarQube Scan
   jobs:
-  - job: 'SonarQube_Scan'
+  - job: SonarQube_Scan
     dependsOn: 'Unit_Tests'
     steps:
     - script: echo SonarQube Scan
