@@ -41,9 +41,8 @@ stages:
 - stage: SonarQube_Scan
   jobs:
   - job: SonarQube_Scan
-    
     steps:
-    - script: echo SonarQube Scan
+    - script: echo "SonarQube Scan"
     - task: CmdLine@2
       inputs:
         script: |
