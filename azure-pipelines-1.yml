@@ -38,7 +38,8 @@ stages:
           echo $testPayload
           curl -X POST -H 'Content-Type: application/json' -u 'devops.integration.user:nE9njUJZ&!98'  -d $testPayload 'https://dev105110.service-now.com//api/sn_devops/v1/devops/tool/test?orchestrationToolId\=ada03cf897420110b33af5b3f153af52\&toolId=db976dc997020110b33af5b3f153af54'
 
-
+- stage: SonarQube Scan
+  jobs:
   - job: 'SonarQube_Scan'
     dependsOn: 'Unit_Tests'
     steps:
@@ -47,7 +48,7 @@ stages:
       inputs:
         script: |
           NOW=$(date +"%Y-%m-%dT%T-0500")
-          curl -X POST -H 'Content-Type: application/json' -u 'devops.integration.user:nE9njUJZ&!98'  -d '{"scanID":"SCAN57b0ba93-1874-4002-8081-54bd17d6e164","scannerName":"SonarQube","projectName":"aws-devops","lastScanned":"2022-02-04T23:15:21.316Z","initiatedBy":"adonis.peguero@rapdev.io","softwareQualityDetail":[{"category":"vulnerabilities","value":"20","categoryDetail":[{"subcategory":"critical","value":"2"},{"subcategory":"high","value":"4"},{"subcategory":"medium","value":"4"},{"subcategory":"minor","value":"10"}]},{"category":"license_risks","result":"PASS","actual":"2","expected":"<5"}],"artifacts":[{"name":"rapdev-web.war","version":"1.0.5"}]}' 'https://dev105110.service-now.com//api/sn_devops/v1/devops/tool/test?orchestrationToolId\=ada03cf897420110b33af5b3f153af52\&toolId=3e27ef1597064110b33af5b3f153af14'
+          curl -X POST -H 'Content-Type: application/json' -u 'devops.integration.user:nE9njUJZ&!98'  -d '{"scanID":"SCAN001","scannerName":"SonarQube","projectName":"aws-devops","lastScanned":"2022-02-04T23:15:21.316Z","initiatedBy":"adonis.peguero@rapdev.io","softwareQualityDetail":[{"category":"vulnerabilities","value":"20","categoryDetail":[{"subcategory":"critical","value":"2"},{"subcategory":"high","value":"4"},{"subcategory":"medium","value":"4"},{"subcategory":"minor","value":"10"}]},{"category":"license_risks","result":"PASS","actual":"2","expected":"<5"}],"artifacts":[{"name":"rapdev-web.war","version":"1.0.5"}]}' 'https://dev105110.service-now.com//api/sn_devops/v1/devops/tool/test?orchestrationToolId\=ada03cf897420110b33af5b3f153af52\&toolId=3e27ef1597064110b33af5b3f153af14'
 
 
 - stage: Deploy
