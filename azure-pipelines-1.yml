@@ -40,7 +40,6 @@ stages:
 
 
   - job: 'Checkmarx_Scan'
-    dependsOn: 'Unit_Tests'
     steps:
     - script: echo Checkmarx Scan
     - task: CmdLine@2
