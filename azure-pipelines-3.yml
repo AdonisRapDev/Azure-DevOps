@@ -4,7 +4,7 @@
 # https://aka.ms/yaml
 
 stages:
-- stage: Test
+- stage: Software_Quality
   jobs:
   - job: Checkmarx_Scan
     steps:
