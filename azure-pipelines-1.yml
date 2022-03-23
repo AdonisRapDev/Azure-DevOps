@@ -77,4 +77,3 @@ stages:
     - task: ServiceNow-DevOps-Server-Change-Acceleration@1
       inputs:
         connectedServiceName: 'dev105110-Adonis Test project-ServiceNow DevOps Service Connection'
-        UpstreamJob: 'Test'
