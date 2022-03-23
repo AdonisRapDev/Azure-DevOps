@@ -77,14 +77,3 @@ stages:
     - task: ServiceNow-DevOps-Server-Change-Acceleration@1
       inputs:
         connectedServiceName: 'dev105110-Adonis Test project-ServiceNow DevOps Service Connection'
-        changeRequestDetails: |
-          {
-              "setCloseCode" : true,
-              "attributes": {
-                "requested_by": {
-                  "name": "System Administrator"
-                },
-                "start_date": "2021-01-05 08:00:00",
-                "end_date": "2021-01-08 08:00:00"
-              }
-            }
