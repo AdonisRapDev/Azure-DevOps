@@ -74,7 +74,6 @@ stages:
     pool: server
     dependsOn: 'UAT_Deploy'
     steps:
-    - bash: echo “Production Deploy”
     - task: ServiceNow-DevOps-Server-Change-Acceleration@1
       inputs:
         connectedServiceName: 'dev105110-Adonis Test project-ServiceNow DevOps Service Connection'
