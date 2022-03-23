@@ -71,6 +71,7 @@ stages:
 
 
   - job:  Production_Deploy
+    pool: server
     dependsOn: 'UAT_Deploy'
     steps:
     - bash: echo “Production Deploy”
