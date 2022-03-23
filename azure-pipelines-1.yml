@@ -71,6 +71,7 @@ stages:
 
 
   - job:  Production_Deploy
+    dependsOn: 'UAT_Deploy'
     steps:
     - bash: echo “Production Deploy”
     - task: ServiceNow-DevOps-Server-Change-Acceleration@1
