@@ -74,6 +74,18 @@ stages:
     pool: server
     dependsOn: 'UAT_Deploy'
     steps:
+    - task: InvokeRESTAPI@1
+      inputs:
+        connectionType: 'connectedServiceName'
+        serviceConnection: 'change1'
+        method: 'POST'
+        body: |
+         {
+            "buildNumber": "$(build.buildId)",
+            "isMultiBranch": "true",
+            "branchName": "$(build.sourceBranchName)"
+         }
+        waitForCompletion: 'true'
     - task: ServiceNow-DevOps-Server-Change-Acceleration@1
       inputs:
         connectedServiceName: 'dev105110-Adonis Test project-ServiceNow DevOps Service Connection'
@@ -88,3 +100,4 @@ stages:
             "end_date": "2021-01-08 08:00:00"
           }
           }
+          
