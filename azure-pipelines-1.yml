@@ -73,3 +73,19 @@ stages:
   - job:  Production_Deploy
     pool: server
     dependsOn: 'UAT_Deploy'
+    steps:
+    - task: ServiceNow-DevOps-Server-Change-Acceleration@1
+      inputs:
+        connectedServiceName: 'dev105110-Adonis Test project-ServiceNow DevOps Service Connection'
+        UpstreamJob: 'Test'
+        changeRequestDetails: |
+          {
+              "setCloseCode" : true,
+              "attributes": {
+                "requested_by": {
+                  "name": "test user"
+                },
+                "start_date": "2021-01-05 08:00:00",
+                "end_date": "2021-01-08 08:00:00"
+              }
+            }
